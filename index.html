@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Messy Blog by Uri Ben Baruch</title>
+</head>
+<body>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-header" id="home">
+        
+       <div class="title-section">
+                <h1>The Messy Blog</h1>
+                
+                <p class="byline">The Product Manager's Guide to Organized Chaos by Uri Ben Baruch</p>
+                
+                <p class="hero-slogan">
+                    Stop fighting your natural messiness. Learn to use your innate creativity and multitasking skills as the foundation for an organized, happy, and highly productive life.
+                </p>
+                
+                
+                <p id="tipOutput" class="tip-text">
+                    Welcome! This blog is dedicated to turning your messy character and natural multitasking into a productive advantage. Click 'Get a Tip' to start!
+                </p>
+                                <button id="tipButton" class="tip-btn">Get a Tip</button>
+            </div>        </div>
+
+        <div class="about-card">
+            <div class="about-sidebar">
+                <div class="about-header-content"> 
+                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQEAHu5IXBlvmA/profile-displayphoto-shrink_400_400/B4DZXt2zIlHsAg-/0/1743452320816?e=1764806400&v=beta&t=mQ4Sg_ZCfg7tIXyCpN84hr9x1deEBXOM-TeBkB2TWEE" 
+                         alt="Uri Ben Baruch" class="circle">
+                    <div class="about-text">
+                        <h3>About Me</h3>
+                        <p>Hey, I’m Uri Ben Baruch, former IDF soldier, currently studying Product Management at Atlas College in Tel Aviv.</p>
+                        <p>Naturally messy with tons of ideas flying everywhere, but I’ve learned to organize the chaos with systems and routines.</p>
+                        <p>Goal: become a kick-ass Product Manager and build impactful products at a major tech company.</p>
+                    </div>
+                </div>
+                
+                <button id="scrollToComicButton" class="tip-btn">
+                    Click me instead of reading all of it!
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="simple-card">
+        <img src="images/uri.png" alt="This is an accurate resemblance of me">
+    </div>
+
+    <footer id="contact">
+        <p>Contact: uribbgg@gmail.com <br>0584333584</p>
+    </footer>
+
+    <script>
+        const tips = [
+            "Break tasks into smaller steps.",
+            "Use a planner to track deadlines.",
+            "Start with the simplest step to build momentum.",
+            "Avoid multitasking, finish one thing at a time.",
+            "Use the 5-minute rule: if it takes less than 5 minutes, do it now.",
+            "Write your goals for the day each morning.",
+            "Declutter your workspace at the end of each day.",
+            "Set time blocks for focused work.",
+            "Turn off notifications when working.",
+            "Review your progress every evening.",
+            "Use checklists for recurring routines.",
+            "Set reminders for important tasks.",
+            "Organize digital files into clear folders.",
+            "Use color coding to categorize priorities.",
+            "Limit social media during productive hours.",
+            "Start the day with the most important task.",
+            "Set weekly goals every Sunday.",
+            "Give every item at home a fixed place.",
+            "Prepare your next day the night before.",
+            "Celebrate small wins to keep motivation high."
+        ];
+
+        const button = document.getElementById("tipButton");
+        const output = document.getElementById("tipOutput");
+
+        button.addEventListener("click", () => {
+            const randomIndex = Math.floor(Math.random() * tips.length);
+            output.textContent = tips[randomIndex];
+        });
+
+        // 🛑 Scroll to comic button logic - MODIFIED
+        const scrollToComicButton = document.getElementById("scrollToComicButton");
+        const simpleCard = document.querySelector(".simple-card"); 
+
+        if (scrollToComicButton && simpleCard) {
+            scrollToComicButton.addEventListener("click", () => {
+                
+                // 🛑 ACTION 1: Make the card visible
+                simpleCard.style.display = 'block'; 
+                
+                // ACTION 2: Then scroll to it smoothly
+                simpleCard.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start' 
+                });
+            });
+        }
+    </script>
+
+</body>
+</html>

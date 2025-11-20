@@ -1,0 +1,224 @@
+body {
+    background-color:tan;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* --- NAVIGATION STYLES --- */
+nav {
+    background-color: lightgray;
+    padding: 12px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-bottom: 3px solid black; 
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* --- HERO SECTION CONTAINER (OUTER) --- */
+.hero-header {
+    background: lightgray; 
+    padding: 50px;
+    border-radius: 16px;
+    margin: 20px;
+    border: 7px solid black;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 30px; 
+    align-items: start; 
+    max-width: 1200px; 
+    margin: 20px auto; 
+}
+
+/* --- TITLE SECTION (INNER CARD) --- */
+.title-section {
+    padding: 20px;
+    background: lightblue; 
+    border: 3px solid black;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.title-section h1 {
+    font-size: 56px;
+    margin: 0 0 8px 0;
+    font-family: 'Times New Roman', Times, serif;
+    color: #000;
+}
+
+.byline {
+    margin: 0 0 16px 0;
+    font-size: 19px;
+    font-weight: 600;
+    color: #000;
+}
+
+.hero-slogan {
+    font-size: 23px;
+    margin: 0 0 30px 0;
+    color: #000;
+    line-height: 1.5;
+}
+
+/* --- ABOUT ME CARD STYLES (INNER CARD) --- */
+.about-card {
+    background: lightblue; 
+    border: 3px solid black;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 20px; 
+}
+
+/* --- SIDEBAR CONTENT ALIGNMENT --- */
+.about-sidebar {
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+    align-items: center; 
+    text-align: center; 
+}
+
+.about-header-content {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: flex-start;
+    width: 100%; 
+}
+
+.about-text {
+    flex: 1; 
+    text-align: left; 
+}
+
+.circle {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid black;
+    flex-shrink: 0;
+    margin-top: 0;
+}
+
+/* --- TIP BUTTON STYLES --- */
+.tip-btn {
+    background: white; 
+    color: black;
+    border: 3px solid black;
+    padding: 12px 28px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tip-btn:hover {
+    background: black;
+    color: white;
+}
+
+.tip-text {
+    margin-top: 16px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* --- SIMPLE CARD STYLES (Comic Image Container) --- */
+.simple-card {
+    direction: ltr;
+    text-align: left;
+    max-width: 800px;
+    margin: 60px auto;
+    background: white;
+    color: #222;
+    border: 7px solid black;
+    border-radius: 16px;
+    padding: 36px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    line-height: 1.8;
+    font-size: 18px;
+    /* 🛑 CHANGED: Hidden by default */
+    display: none; 
+}
+
+.simple-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    margin: 30px auto 0;
+    border: 4px solid black;
+}
+
+/* --- FOOTER STYLES --- */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 80px;
+    font-size: 17px;
+}
+
+* { scroll-behavior: smooth; }
+
+/* --- RESPONSIVE MEDIA QUERY FIX --- */
+@media (max-width: 950px) {
+    
+    .hero-header {
+        grid-template-columns: 1fr; 
+        padding: 20px; 
+        gap: 20px;
+    }
+    
+    .title-section {
+        text-align: center;
+    }
+
+    .about-sidebar {
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+        gap: 15px; 
+    }
+
+    .about-header-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .title-section h1 { font-size: 48px; }
+    
+    .about-text {
+        order: -1; 
+        margin-bottom: 15px; 
+    }
+    
+    .circle {
+        order: 0; 
+        margin-top: 0; 
+    }
+}
