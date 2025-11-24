@@ -4,10 +4,10 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Serve static files from the 'public' directory
+// 1️⃣ Serve static files first
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Serve the index.html file for any route
+// 2️⃣ Fallback to index.html for other routes
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
@@ -15,3 +15,4 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
