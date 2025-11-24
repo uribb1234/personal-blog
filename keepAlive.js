@@ -2,15 +2,19 @@ const http = require('http');
 
 function pingSelf() {
     const options = {
-        host: 'localhost', // או אם אתה ב-Render: 'personal-blog-wire.onrender.com'
-        port: 3000,        // הפורט שהבלוג שלך מאזין לו
+        host: 'personal-blog-wire.onrender.com', // כתובת הבלוג שלך
+        port: 80, // אם Render מאזין ל-HTTP רגיל
         path: '/'
     };
 
+    const startTime = new Date();
     http.get(options, (res) => {
-        console.log(`Pinged self: ${res.statusCode}`);
+        const endTime = new Date();
+        const duration = endTime - startTime;
+        console.log(`[${startTime.toISOString()}] Ping successful! Status: ${res.statusCode}, Response time: ${duration}ms`);
     }).on('error', (err) => {
-        console.log('Ping failed:', err.message);
+        const now = new Date();
+        console.error(`[${now.toISOString()}] Ping failed: ${err.message}`);
     });
 }
 
