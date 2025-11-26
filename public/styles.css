@@ -1,5 +1,5 @@
 body {
-    background-color:tan;
+    background-color: tan;
     font-family: Arial, sans-serif;
     margin: 0;
 }
@@ -32,7 +32,7 @@ nav {
     text-decoration: underline;
 }
 
-/* --- HERO SECTION CONTAINER (OUTER) --- */
+/* --- HERO SECTION CONTAINER (Original - Keep for other pages) --- */
 .hero-header {
     background: lightgray; 
     padding: 50px;
@@ -159,7 +159,6 @@ nav {
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     line-height: 1.8;
     font-size: 18px;
-    /* 🛑 CHANGED: Hidden by default */
     display: none; 
 }
 
@@ -184,7 +183,7 @@ footer {
 
 * { scroll-behavior: smooth; }
 
-/* --- RESPONSIVE MEDIA QUERY FIX --- */
+/* --- EXISTING RESPONSIVE MEDIA QUERY --- */
 @media (max-width: 950px) {
     
     .hero-header {
@@ -220,82 +219,125 @@ footer {
     .circle {
         order: 0; 
         margin-top: 0; 
-    }/* === Articles Section === */
+    }
+}
 
+/* ========================================= */
+/* NEW STYLES FOR ARTICLES PAGE         */
+/* ========================================= */
+
+/* --- Clean Header (New) --- */
+.page-header {
+    text-align: center;
+    padding: 40px 20px 20px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-header h1 {
+    font-size: 56px;
+    margin: 0 0 10px 0;
+    font-family: 'Times New Roman', Times, serif;
+    color: #000;
+}
+
+.page-header .subtitle {
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+}
+
+/* --- Articles Grid Section --- */
 .articles-section {
-    padding: 40px 0;
+    padding: 20px 20px 80px 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .articles-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);  /* 3 columns */
-    gap: 24px;
-    width: 90%;
+    grid-template-columns: repeat(3, 1fr);  /* Exactly 3 columns */
+    gap: 30px;
+    width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
 }
 
 /* --- Article Card --- */
 .article-card {
     background: #ffffff;
-    border-radius: 14px;
+    border: 2px solid black;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    /* Hard shadow for messy/retro look */
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.8);
+    transition: transform 0.2s ease;
     display: flex;
     flex-direction: column;
 }
 
 .article-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+    transform: translateY(-5px);
 }
 
 .article-card img {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures image covers area without stretching */
+    border-bottom: 2px solid black;
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center; /* Or left, as you prefer */
 }
 
 .article-card h2 {
-    font-size: 1.4rem;
-    margin: 16px;
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .article-card p {
-    margin: 0 16px 20px 16px;
+    margin: 0 0 20px 0;
     color: #555;
     line-height: 1.5;
+    flex-grow: 1;
 }
 
-/* --- Buttons --- */
+/* --- Read More Button --- */
 .read-more-btn {
-    margin: auto 16px 16px 16px;
-    padding: 10px 14px;
-    background: #111;
-    color: #fff;
+    display: inline-block;
+    padding: 10px 20px;
+    background: black;
+    color: white;
     text-decoration: none;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    text-align: center;
-    transition: background 0.25s ease;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s;
+    align-self: center; /* Center the button in the card */
 }
 
 .read-more-btn:hover {
     background: #444;
 }
 
-/* === Responsive === */
+/* --- Responsive for Grid --- */
 
 @media (max-width: 1000px) {
     .articles-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
     }
 }
 
 @media (max-width: 700px) {
     .articles-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1 column on mobile */
     }
-}
+    
+    .page-header h1 {
+        font-size: 40px;
+    }
 }
